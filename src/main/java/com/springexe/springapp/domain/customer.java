@@ -17,6 +17,14 @@ public class customer {
     private String fstName;
     private String lstName;
 
+    public customer(String ftName, String ltName) {
+        this.fstName = ftName;
+        this.lstName = ltName;
+    }
+
+    public customer() {
+
+    }
 
     public void setFstName(String fstName) {
         this.fstName = fstName;
