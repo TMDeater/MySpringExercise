@@ -33,11 +33,15 @@ public class BootstrapData implements CommandLineRunner {
 
         //init by bean
         ApplicationContext context=new ClassPathXmlApplicationContext("customerbean.xml");
-        customer b1 = (customer) context.getBean("customer1");
-        customerRepository.save(b1);
-
-        customer b2 = (customer) context.getBean("customer2");
-        customerRepository.save(b2);
+        int count = (int) context.getBean("count");
+        System.out.println(Integer.toString(count)+" customer is going to be saved");
+        String beanName = new String();
+        customer b = new customer();
+        for (int i=1;i<count+1;i++){
+            beanName = "customer"+Integer.toString(i);
+            b = (customer) context.getBean(beanName);
+            customerRepository.save(b);
+        }
 
 
         System.out.println("Customer Saved");
