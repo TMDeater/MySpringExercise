@@ -39,4 +39,10 @@ public class CustomerController {
     customer replaceCustomer(@RequestBody customer newCustomer, @PathVariable Integer id) {
         return customerservice.ReplaceCustomer(newCustomer,id);
     }
+
+    @DeleteMapping("/{id}")
+    String deleteCustomer(@PathVariable Integer id) {
+        customerservice.DeleteCustomer(id);
+        return "id = "+Integer.toString(id)+" deleted";
+    }
 }
