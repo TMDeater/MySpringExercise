@@ -35,4 +35,8 @@ public class CustomerController {
         return customerservice.SaveCustomer(cstmr);
     }
 
+    @PutMapping("/{id}")
+    customer replaceCustomer(@RequestBody customer newCustomer, @PathVariable Integer id) {
+        return customerservice.ReplaceCustomer(newCustomer,id);
+    }
 }
