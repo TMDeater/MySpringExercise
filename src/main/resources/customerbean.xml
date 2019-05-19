@@ -4,6 +4,10 @@
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
+    <bean id="count" class="java.lang.Integer">
+        <constructor-arg value="2" />
+    </bean>
+
     <bean id = "customer1" class = "com.springexe.springapp.domain.customer">
         <property name = "fstName" value = "Alan"/>
         <property name = "lstName" value = "Po"/>

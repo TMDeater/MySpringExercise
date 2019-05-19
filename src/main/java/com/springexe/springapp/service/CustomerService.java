@@ -11,4 +11,8 @@ public interface CustomerService {
     List<customer> listAllCustomer();
 
     customer SaveCustomer(customer cstmr);
+
+    customer ReplaceCustomer(customer cstmr, Integer id);
+
+    void DeleteCustomer(Integer id);
 }
